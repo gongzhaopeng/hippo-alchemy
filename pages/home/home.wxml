@@ -1,0 +1,42 @@
+<!--pages/home/home.wxml-->
+<scroll-view class="scroll-area" type="custom" scroll-y show-scrollbar="{{false}}">
+  <view class="head-image" />
+  <sticky-header offset-top="{{windowInfo.statusBarHeight + 5}}">
+    <view class="alchemist-space">
+      <view class='avatar' />
+      <view class="alchemist-info">
+        <view class="home-site" bind:tap="tapHomeSite">
+          <text style="padding-right: 20rpx;">主页</text>
+          <text class="url">{{urls.homeSite}}</text>
+        </view>
+        <view class="blog" bind:tap="tapBlog">
+          <text style="padding-right: 20rpx;">博客</text>
+          <text class="url">{{urls.blog}}</text>
+        </view>
+        <view class="alchemist-tags">
+          <block wx:for="{{alchemistTags}}">
+            <button class="alchemist-tag" size="mini" plain="{{true}}" style="color: {{alchemistTagColors[index%alchemistTagColors.length]}}; border-style: none; font-size: 20rpx;">
+              {{item}}
+            </button>
+          </block>
+        </view>
+      </view>
+    </view>
+  </sticky-header>
+  <view class="ai-header"/>
+  <view class="ai-area">
+    <view class="digital-man-area" bind:tap="tapDigitalMan">
+      <text style="font-size: 25rpx;">专家数字人</text>
+      <text class="url" style="font-size: 20rpx; margin-top: 5rpx;">{{urls.digitalMan}}</text>
+    </view>
+    <view class="tts-area" bind:tap="tapTts">
+      <text style="font-size: 25rpx;">个性化人声播报</text>
+      <text class="url" style="font-size: 20rpx; margin-top: 5rpx;">{{urls.tts}}</text>
+    </view>
+  </view>
+  <view class="footer">
+    <text class="finish-word">
+      And be ye kind one to another, tenderhearted, forgiving one another, even as God for Christ's sake hath forgiven you.
+    </text>
+  </view>
+</scroll-view>
